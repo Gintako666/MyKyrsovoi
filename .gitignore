@@ -1,0 +1,11 @@
+# Directus folders
+/back/database
+/back/snapshots
+/back/uploads
+/back/backups
+/back/extensions/migrations
+
+node_modules
+.env
+dist
+.DS_Store
