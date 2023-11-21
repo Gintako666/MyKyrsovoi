@@ -1,10 +1,746 @@
 version: 1
 directus: 12.1.2
 vendor: postgres
-collections: []
-fields: []
-relations: []
+collections:
+  - collection: items
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
+      collapse: open
+      collection: items
+      color: null
+      display_template: null
+      group: null
+      hidden: false
+      icon: null
+      item_duplication_fields: null
+      note: null
+      preview_url: null
+      singleton: false
+      sort: null
+      sort_field: null
+      translations: null
+      unarchive_value: null
+    schema:
+      name: items
+  - collection: items_count
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
+      collapse: open
+      collection: items_count
+      color: null
+      display_template: null
+      group: null
+      hidden: false
+      icon: null
+      item_duplication_fields: null
+      note: null
+      preview_url: null
+      singleton: false
+      sort: null
+      sort_field: null
+      translations: null
+      unarchive_value: null
+    schema:
+      name: items_count
+  - collection: orders
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
+      collapse: open
+      collection: orders
+      color: null
+      display_template: null
+      group: null
+      hidden: false
+      icon: null
+      item_duplication_fields: null
+      note: null
+      preview_url: null
+      singleton: false
+      sort: null
+      sort_field: null
+      translations: null
+      unarchive_value: null
+    schema:
+      name: orders
+  - collection: orders_items_count
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
+      collapse: open
+      collection: orders_items_count
+      color: null
+      display_template: null
+      group: null
+      hidden: true
+      icon: import_export
+      item_duplication_fields: null
+      note: null
+      preview_url: null
+      singleton: false
+      sort: null
+      sort_field: null
+      translations: null
+      unarchive_value: null
+    schema:
+      name: orders_items_count
+fields:
+  - collection: items
+    field: count
+    type: integer
+    meta:
+      collection: items
+      conditions: null
+      display: null
+      display_options: null
+      field: count
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 3
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: count
+      table: items
+      data_type: integer
+      default_value: null
+      max_length: null
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: items
+    field: id
+    type: integer
+    meta:
+      collection: items
+      conditions: null
+      display: null
+      display_options: null
+      field: id
+      group: null
+      hidden: true
+      interface: input
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 1
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: id
+      table: items
+      data_type: integer
+      default_value: nextval('items_id_seq'::regclass)
+      max_length: null
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: false
+      is_unique: true
+      is_primary_key: true
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: true
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: items
+    field: name
+    type: string
+    meta:
+      collection: items
+      conditions: null
+      display: null
+      display_options: null
+      field: name
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 2
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: name
+      table: items
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: items_count
+    field: count
+    type: integer
+    meta:
+      collection: items_count
+      conditions: null
+      display: null
+      display_options: null
+      field: count
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 2
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: count
+      table: items_count
+      data_type: integer
+      default_value: null
+      max_length: null
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: items_count
+    field: id
+    type: integer
+    meta:
+      collection: items_count
+      conditions: null
+      display: null
+      display_options: null
+      field: id
+      group: null
+      hidden: true
+      interface: input
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 1
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: id
+      table: items_count
+      data_type: integer
+      default_value: nextval('items_count_id_seq'::regclass)
+      max_length: null
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: false
+      is_unique: true
+      is_primary_key: true
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: true
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: items_count
+    field: item
+    type: integer
+    meta:
+      collection: items_count
+      conditions: null
+      display: related-values
+      display_options: null
+      field: item
+      group: null
+      hidden: false
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        template: '{{name}}'
+      readonly: false
+      required: false
+      sort: 3
+      special:
+        - m2o
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: item
+      table: items_count
+      data_type: integer
+      default_value: null
+      max_length: null
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: items
+      foreign_key_column: id
+  - collection: orders
+    field: id
+    type: integer
+    meta:
+      collection: orders
+      conditions: null
+      display: null
+      display_options: null
+      field: id
+      group: null
+      hidden: true
+      interface: input
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 1
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: id
+      table: orders
+      data_type: integer
+      default_value: nextval('orders_id_seq'::regclass)
+      max_length: null
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: false
+      is_unique: true
+      is_primary_key: true
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: true
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: orders
+    field: items
+    type: alias
+    meta:
+      collection: orders
+      conditions: null
+      display: null
+      display_options:
+        template: '{{id}}'
+      field: items
+      group: null
+      hidden: false
+      interface: list-m2m
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 5
+      special:
+        - m2m
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+  - collection: orders
+    field: name
+    type: string
+    meta:
+      collection: orders
+      conditions: null
+      display: null
+      display_options: null
+      field: name
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 4
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: name
+      table: orders
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: orders
+    field: status
+    type: string
+    meta:
+      collection: orders
+      conditions: null
+      display: null
+      display_options: null
+      field: status
+      group: null
+      hidden: false
+      interface: select-dropdown
+      note: null
+      options:
+        choices:
+          - text: pending
+            value: pending
+          - text: completed
+            value: completed
+      readonly: false
+      required: false
+      sort: 6
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: status
+      table: orders
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: orders
+    field: user_created
+    type: uuid
+    meta:
+      collection: orders
+      conditions: null
+      display: user
+      display_options: null
+      field: user_created
+      group: null
+      hidden: true
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        template: '{{avatar.$thumbnail}} {{first_name}} {{last_name}}'
+      readonly: true
+      required: false
+      sort: 2
+      special:
+        - user-created
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: user_created
+      table: orders
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: directus_users
+      foreign_key_column: id
+  - collection: orders_items_count
+    field: id
+    type: integer
+    meta:
+      collection: orders_items_count
+      conditions: null
+      display: null
+      display_options: null
+      field: id
+      group: null
+      hidden: true
+      interface: null
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 1
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: id
+      table: orders_items_count
+      data_type: integer
+      default_value: nextval('orders_items_count_id_seq'::regclass)
+      max_length: null
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: false
+      is_unique: true
+      is_primary_key: true
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: true
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: orders_items_count
+    field: items_count_id
+    type: integer
+    meta:
+      collection: orders_items_count
+      conditions: null
+      display: null
+      display_options: null
+      field: items_count_id
+      group: null
+      hidden: true
+      interface: null
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 3
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: items_count_id
+      table: orders_items_count
+      data_type: integer
+      default_value: null
+      max_length: null
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: items_count
+      foreign_key_column: id
+  - collection: orders_items_count
+    field: orders_id
+    type: integer
+    meta:
+      collection: orders_items_count
+      conditions: null
+      display: null
+      display_options: null
+      field: orders_id
+      group: null
+      hidden: true
+      interface: null
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 2
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: orders_id
+      table: orders_items_count
+      data_type: integer
+      default_value: null
+      max_length: null
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: orders
+      foreign_key_column: id
+relations:
+  - collection: items_count
+    field: item
+    related_collection: items
+    meta:
+      junction_field: null
+      many_collection: items_count
+      many_field: item
+      one_allowed_collections: null
+      one_collection: items
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: items
+      sort_field: null
+    schema:
+      table: items_count
+      column: item
+      foreign_key_table: items
+      foreign_key_column: id
+      constraint_name: items_count_item_foreign
+      on_update: NO ACTION
+      on_delete: SET NULL
+  - collection: orders
+    field: user_created
+    related_collection: directus_users
+    meta:
+      junction_field: null
+      many_collection: orders
+      many_field: user_created
+      one_allowed_collections: null
+      one_collection: directus_users
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: orders
+      column: user_created
+      foreign_key_table: directus_users
+      foreign_key_column: id
+      constraint_name: orders_user_created_foreign
+      on_update: NO ACTION
+      on_delete: NO ACTION
+  - collection: orders_items_count
+    field: items_count_id
+    related_collection: items_count
+    meta:
+      junction_field: orders_id
+      many_collection: orders_items_count
+      many_field: items_count_id
+      one_allowed_collections: null
+      one_collection: items_count
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: orders_items_count
+      column: items_count_id
+      foreign_key_table: items_count
+      foreign_key_column: id
+      constraint_name: orders_items_count_items_count_id_foreign
+      on_update: NO ACTION
+      on_delete: SET NULL
+  - collection: orders_items_count
+    field: orders_id
+    related_collection: orders
+    meta:
+      junction_field: items_count_id
+      many_collection: orders_items_count
+      many_field: orders_id
+      one_allowed_collections: null
+      one_collection: orders
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: items
+      sort_field: null
+    schema:
+      table: orders_items_count
+      column: orders_id
+      foreign_key_table: orders
+      foreign_key_column: id
+      constraint_name: orders_items_count_orders_id_foreign
+      on_update: NO ACTION
+      on_delete: SET NULL
 data:
+  items:
+    '1':
+      id: 1
+      name: item
+      count: 100
+    '2':
+      id: 2
+      name: item2
+      count: 50
+  items_count:
+    '1':
+      id: 1
+      count: 100
+      item: 1
+    '2':
+      id: 2
+      count: 300
+      item: 2
+  orders:
+    '4':
+      id: 4
+      user_created: ac594ab3-d6f1-4ad1-8535-05207df56d37
+      name: me order
+      status: null
+  orders_items_count:
+    '1':
+      id: 1
+      orders_id: 4
+      items_count_id: 1
+    '2':
+      id: 2
+      orders_id: 4
+      items_count_id: 2
   directus_files: {}
   directus_folders: {}
   directus_migrations:
@@ -272,8 +1008,236 @@ data:
       version: 20230721A
       name: Require Shares Fields
       timestamp: '2023-09-13T09:43:07.464Z'
-  directus_permissions: {}
-  directus_presets: {}
+  directus_permissions:
+    '1':
+      id: 1
+      role: null
+      collection: items
+      action: read
+      permissions: {}
+      validation: {}
+      presets: null
+      fields: '*'
+    '2':
+      id: 2
+      role: null
+      collection: items
+      action: create
+      permissions: {}
+      validation: {}
+      presets: null
+      fields: '*'
+    '3':
+      id: 3
+      role: null
+      collection: items
+      action: delete
+      permissions: {}
+      validation: {}
+      presets: null
+      fields: '*'
+    '4':
+      id: 4
+      role: null
+      collection: items
+      action: update
+      permissions: {}
+      validation: {}
+      presets: null
+      fields: '*'
+    '5':
+      id: 5
+      role: null
+      collection: items
+      action: share
+      permissions: {}
+      validation: {}
+      presets: null
+      fields: '*'
+    '6':
+      id: 6
+      role: null
+      collection: items_count
+      action: create
+      permissions: {}
+      validation: {}
+      presets: null
+      fields: '*'
+    '7':
+      id: 7
+      role: null
+      collection: items_count
+      action: read
+      permissions: {}
+      validation: {}
+      presets: null
+      fields: '*'
+    '8':
+      id: 8
+      role: null
+      collection: items_count
+      action: update
+      permissions: {}
+      validation: {}
+      presets: null
+      fields: '*'
+    '9':
+      id: 9
+      role: null
+      collection: items_count
+      action: delete
+      permissions: {}
+      validation: {}
+      presets: null
+      fields: '*'
+    '10':
+      id: 10
+      role: null
+      collection: items_count
+      action: share
+      permissions: {}
+      validation: {}
+      presets: null
+      fields: '*'
+    '11':
+      id: 11
+      role: null
+      collection: orders
+      action: create
+      permissions: {}
+      validation: {}
+      presets: null
+      fields: '*'
+    '12':
+      id: 12
+      role: null
+      collection: orders
+      action: read
+      permissions: {}
+      validation: {}
+      presets: null
+      fields: '*'
+    '13':
+      id: 13
+      role: null
+      collection: orders
+      action: update
+      permissions: {}
+      validation: {}
+      presets: null
+      fields: '*'
+    '14':
+      id: 14
+      role: null
+      collection: orders
+      action: delete
+      permissions: {}
+      validation: {}
+      presets: null
+      fields: '*'
+    '15':
+      id: 15
+      role: null
+      collection: orders
+      action: share
+      permissions: {}
+      validation: {}
+      presets: null
+      fields: '*'
+    '16':
+      id: 16
+      role: null
+      collection: orders_items_count
+      action: create
+      permissions: {}
+      validation: {}
+      presets: null
+      fields: '*'
+    '17':
+      id: 17
+      role: null
+      collection: orders_items_count
+      action: read
+      permissions: {}
+      validation: {}
+      presets: null
+      fields: '*'
+    '18':
+      id: 18
+      role: null
+      collection: orders_items_count
+      action: update
+      permissions: {}
+      validation: {}
+      presets: null
+      fields: '*'
+    '19':
+      id: 19
+      role: null
+      collection: orders_items_count
+      action: delete
+      permissions: {}
+      validation: {}
+      presets: null
+      fields: '*'
+    '20':
+      id: 20
+      role: null
+      collection: orders_items_count
+      action: share
+      permissions: {}
+      validation: {}
+      presets: null
+      fields: '*'
+  directus_presets:
+    '1':
+      id: 1
+      bookmark: null
+      user: ac594ab3-d6f1-4ad1-8535-05207df56d37
+      role: null
+      collection: items
+      search: null
+      layout: null
+      layout_query:
+        tabular:
+          limit: 25
+      layout_options: null
+      refresh_interval: null
+      filter: null
+      icon: bookmark
+      color: null
+    '2':
+      id: 2
+      bookmark: null
+      user: ac594ab3-d6f1-4ad1-8535-05207df56d37
+      role: null
+      collection: orders
+      search: null
+      layout: tabular
+      layout_query:
+        tabular:
+          limit: 25
+      layout_options: null
+      refresh_interval: null
+      filter: null
+      icon: bookmark
+      color: null
+    '3':
+      id: 3
+      bookmark: null
+      user: ac594ab3-d6f1-4ad1-8535-05207df56d37
+      role: null
+      collection: items_count
+      search: null
+      layout: null
+      layout_query:
+        tabular:
+          limit: 25
+      layout_options: null
+      refresh_interval: null
+      filter: null
+      icon: bookmark
+      color: null
   directus_roles:
     66b1450b-3237-4eaf-9285-89441f00855c:
       id: 66b1450b-3237-4eaf-9285-89441f00855c
@@ -284,8 +1248,39 @@ data:
       enforce_tfa: false
       admin_access: true
       app_access: true
-  directus_sessions: {}
-  directus_settings: {}
+  directus_sessions:
+    WtvP6xWV5pTxc-YXCr7ChtSN-eYLH4i37WI5kdq9j9eLK0Q4TS9L5nWBNdIAwt6o:
+      token: WtvP6xWV5pTxc-YXCr7ChtSN-eYLH4i37WI5kdq9j9eLK0Q4TS9L5nWBNdIAwt6o
+      user: ac594ab3-d6f1-4ad1-8535-05207df56d37
+      expires: '2023-11-25T17:16:26.489Z'
+      ip: 172.18.0.1
+      user_agent: >-
+        Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/119.0.0.0 Safari/537.36
+      share: null
+      origin: http://127.0.0.1:8085
+  directus_settings:
+    '1':
+      id: 1
+      project_name: Directus
+      project_url: null
+      project_color: null
+      project_logo: null
+      public_foreground: null
+      public_background: null
+      public_note: null
+      auth_login_attempts: 25
+      auth_password_policy: null
+      storage_asset_transform: all
+      storage_asset_presets: null
+      custom_css: null
+      storage_default_folder: null
+      basemaps: null
+      mapbox_key: null
+      module_bar: null
+      project_descriptor: null
+      default_language: ru-RU
+      custom_aspect_ratios: null
   directus_users:
     ac594ab3-d6f1-4ad1-8535-05207df56d37:
       id: ac594ab3-d6f1-4ad1-8535-05207df56d37
@@ -305,8 +1300,8 @@ data:
       status: active
       role: 66b1450b-3237-4eaf-9285-89441f00855c
       token: null
-      last_access: null
-      last_page: null
+      last_access: '2023-11-18T17:16:26.494Z'
+      last_page: /settings/data-model/orders
       provider: default
       external_identifier: null
       auth_data: null

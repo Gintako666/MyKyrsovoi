@@ -63,7 +63,7 @@ services:
       # BACKUP_CRON: ${BACKUP_CRON}
 
       CORS_ENABLED: true
-      CORS_ORIGIN: '*'
+      CORS_ORIGIN: 'http://localhost:3000,http://127.0.0.1:3000'
       PHASE: ${PHASE:-development}
       TZ: ${TZ}
     ports:
